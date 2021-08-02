@@ -2,7 +2,8 @@
 Python FilmAffinity
 *******************
 This is a simple python scraping for the FilmAffinity.
-
+.. texto:hasdf:
+    :target:  https://pypi.python.org/pypi/python_filmaffinity/
 
 .. image:: https://github.com/sergiormb/python_filmaffinity/workflows/Tests/badge.svg?branch=master
     :target: https://github.com/sergiormb/python_filmaffinity/actions/workflows/python-test.yml?query=branch%3Amaster
@@ -49,7 +50,6 @@ Examples
 
 .. code-block:: python
     
-    #Classic
     import python_filmaffinity
     service = python_filmaffinity.FilmAffinity()
     movie = service.get_movie(title='Celda 211')
@@ -61,8 +61,7 @@ Examples
     ['Daniel Monzón']
     movie['actors']
     ['Luis Tosar', 'Alberto Ammann', 'Antonio Resines', 'Carlos Bardem', 'Marta Etura', 'Vicente Romero', 'Manuel Morón', 'Manolo Solo', 'Fernando Soto', 'Luis Zahera', 'Patxi Bisquert', 'Félix Cubero', 'Josean Bengoetxea', 'Juan Carlos Mangas', 'Jesús Carroza']
-
-    #Alternative
+    
 
 Usage
 =====
@@ -86,13 +85,15 @@ Example
     # Classic mode
     import python_filmaffinity
     service = python_filmaffinity.FilmAffinity(lang='en')
+    print(service.lang)
+    'en' # language
     
     # Alternative mode
     import python_filmaffinity
     service = python_filmaffinity.FilmAffinity(lang='filmaffinity')
     print(service.lang)
-    'ec' # my country
-
+    'ec' # my country my language
+hola:target:
 
 search
 ******
