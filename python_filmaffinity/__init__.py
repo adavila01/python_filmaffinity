@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 from .__meta__ import  *
 from .client import Client
-from .config import FIELDS_TYPE
+from .config import FIELDS_TYPE, TEXT_FIND, SEARCH_IN, FIELDS_TYPE, FIELDS_SEARCH_IN, FIELDS_SEARCH_BY 
+
+import pdb
 
 
 class FilmAffinity(Client):
@@ -30,13 +32,13 @@ class FilmAffinity(Client):
 
     def search(self, top=10, **kwargs):
         """Return a list with the data of the movies.
-
         Args:
             title: Search by title
             director: Search by director
             cast: Search by cast
             from_year: Search from the year
             to_year: Search until the year
+            # Classic
             genre: 
                 AN: Animación
                 AV: Aventuras
@@ -55,6 +57,8 @@ class FilmAffinity(Client):
                 TV_SE: Serie de TV
                 TE: Terror
                 WE: Western
+            # Alternative
+            consult instance.genres
         Returns:
             TYPE: Lis with movies data
         """
@@ -62,24 +66,44 @@ class FilmAffinity(Client):
         movies = []
         if kwargs is not None:
             options = ''
-            simple_search = 'title' in kwargs
-            for key, value in iter(kwargs.items()):
-                if key in FIELDS_TYPE:
-                    if (key != 'title'):
-                        simple_search = False
-                    options += 'stext=%s&stype[]=%s&' % (str(kwargs[key]), key)
-                if key == 'from_year':
-                    options += 'fromyear=%s&' % value
-                if key == 'to_year':
-                    options += 'toyear=%s&' % value
-                if key == 'genre':
-                    options += 'genre=%s&' % value
+            if TEXT_FIND not in kwargs:
+            #classic search
+                simple_search = 'title' in kwargs
+                for key, value in iter(kwargs.items()):
+                    if key in FIELDS_TYPE:
+                        if (key != 'title'):
+                            simple_search = False
+                        options += 'stext=%s&stype[]=%s&' % (str(kwargs[key]), key)
+                    if key == 'from_year':
+                        options += 'fromyear=%s&' % value
+                    if key == 'to_year':
+                        options += 'toyear=%s&' % value
+                    if key == 'genre':
+                        options += 'genre=%s&' % value
+            else:
+            #alternative search
+                simple_search = not bool(len(kwargs)-1)
+                options = 'stext=%s&' % (str(kwargs[TEXT_FIND]))
+                for key, value in iter(kwargs.items()):
+                    # pdb.set_trace()
+                    if key == TEXT_FIND:
+                        continue
+                    elif key == SEARCH_IN:
+                        for kin in value.split(','):
+                            if kin in FIELDS_SEARCH_IN:
+                                options +=  'stype[]=%s&' % (kin)
+                    elif key in FIELDS_SEARCH_BY:
+                        nkey = 'fromyear' if key == 'from_year' else 'toyear' if key == 'to_year' else key
+                        options += '%s=%s&' % (nkey,str(kwargs[key]))
             if (simple_search):
-                options = 'stype=title&stext=' + str(kwargs['title'])
+                options = 'stext=%s&' % (str(kwargs[TEXT_FIND if TEXT_FIND in kwargs else 'title']))
+                # options = 'stype=title&stext=' + str(kwargs['title']) if simple_search else options
                 url = self.url + 'search.php?' + options
             else:
                 url = self.url + 'advsearch.php?' + options
+            # pdb.set_trace()
             page = self._load_url(url)
+            # pdb.set_trace()
             movies = self._return_list_movies(page, 'search', top)
             if (len(movies) == 0):
                 url = self.url + 'advsearch.php?' + options
@@ -253,3 +277,5 @@ class FilmAffinity(Client):
             TYPE: Movie data
         """
         return self._recommend('new_filmin', trailer, images)
+
+    

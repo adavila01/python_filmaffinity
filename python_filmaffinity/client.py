@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+from .config import LANGUAGES_BY_COUNTRY, LANG_AUTO
+import pdb
 import requests
 import requests_cache
 import random
@@ -22,7 +23,7 @@ except ImportError:
     from urllib.parse import quote  # Python 3+
 
 current_folder = dirname(abspath(getsourcefile(lambda: 0)))
-supported_languages = ['en', 'es', 'mx', 'ar', 'cl', 'co']
+supported_languages = LANGUAGES_BY_COUNTRY
 
 
 class Client:
@@ -67,7 +68,15 @@ class Client:
         if cache_backend not in ['sqlite', 'memory', 'mongodb', 'redis', None]:
             raise FilmAffinityInvalidBackend(
                 cache_backend)
-        self.lang = lang
+
+        # pdb.set_trace()
+
+        if lang.lower() != LANG_AUTO:
+            # Classic method
+            self.lang = lang.lower()
+        else:
+            # Alternative method
+            self.lang = self._get_all_search_by('lang_by_country')
 
         self.url = self.base_url + self.lang + '/'
         self.url_film = self.url + 'film'
@@ -85,7 +94,9 @@ class Client:
                 device_type="desktop", os=('mac', 'linux')
             )
         }
-
+        self.countries = self._get_all_search_by('country')
+        self.genres = self._get_all_search_by('genre')
+        
     def _generate_new_session_headers(self):
         self.session_headers = {
             'User-Agent': generate_user_agent(
@@ -263,3 +274,29 @@ class Client:
         page = self._load_url(url)
         movies = self._return_list_movies(page, 'top_service', top)
         return movies
+
+    def _get_all_search_by(self, osearch):
+        retorno=''
+        if osearch =='country':
+            page = self._load_url(self.url + 'advsearch.php')
+            soup = BeautifulSoup(page.text,'html.parser')
+            countries = soup.find_all('option',{'data-class':'flag-wrapper'})
+            retorno={c['value']:c.text for c in countries}
+        elif osearch == 'genre':
+            page = self._load_url(self.url + 'advsearch.php')
+            soup = BeautifulSoup(page.text,'html.parser')
+            genres = soup.find('select',{'name':'genre'})
+            retorno = {c['value']:c.text for c in genres.select('option') if bool(c['value'])}
+        elif osearch == 'lang_by_country':
+            try:
+                page = requests.get(self.base_url)
+                if page.url == self.base_url: #compatibility with classic FF
+                    retorno = 'es'
+                elif len(page.url.split('/')[len(page.url.split('/'))-2]) != 2:
+                    retorno = 'es'
+                else:
+                    retorno = page.url.split('/')[len(page.url.split('/'))-2]
+            except:
+                retorno = 'es'
+
+        return retorno
