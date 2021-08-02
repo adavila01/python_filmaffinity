@@ -73,7 +73,7 @@ language
 Classic
 
 - uno
-    - Spanish: 'es'
+ - Spanish: 'es'
 - - USA, UK: 'en'
 -- México: 'mx'
 - Argentina: 'ar'
