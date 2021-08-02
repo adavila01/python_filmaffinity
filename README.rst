@@ -48,6 +48,7 @@ Examples
 ========
 
 .. code-block:: python
+    
     #Classic
     import python_filmaffinity
     service = python_filmaffinity.FilmAffinity()
