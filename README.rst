@@ -78,7 +78,8 @@ language
 - Colombia: 'co'
 - filmaffinity (new)
 
-- Example
+Example
+-------
 
 .. code-block:: python
 
