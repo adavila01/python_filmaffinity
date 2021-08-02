@@ -70,24 +70,27 @@ Usage
 language
 ********
 
-Classic
-
-- uno
--- Spanish: 'es'
-- - USA, UK: 'en'
--- México: 'mx'
+- Spanish: 'es'
+- USA, UK: 'en'
+- México: 'mx'
 - Argentina: 'ar'
 - Chile: 'cl'
 - Colombia: 'co'
-
-Alternative
+- filmaffinity (new)
 
 - Example
 
 .. code-block:: python
 
+    # Classic mode
     import python_filmaffinity
     service = python_filmaffinity.FilmAffinity(lang='en')
+    
+    # Alternative mode
+    import python_filmaffinity
+    service = python_filmaffinity.FilmAffinity(lang='filmaffinity')
+    print(service.lang)
+    'ec' # my country
 
 
 search
