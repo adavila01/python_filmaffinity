@@ -3,8 +3,7 @@ Python FilmAffinity
 *******************
 This is a simple python scraping for the FilmAffinity.
 
-.. texto::
-    texto:target: https://pypi.python.org/pypi/python_filmaffinity/
+ texto:target: https://pypi.python.org/pypi/python_filmaffinity/
 
 .. image:: https://github.com/sergiormb/python_filmaffinity/workflows/Tests/badge.svg?branch=master
     :target: https://github.com/sergiormb/python_filmaffinity/actions/workflows/python-test.yml?query=branch%3Amaster
