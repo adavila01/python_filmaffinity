@@ -1,9 +1,13 @@
+**#titul
+This site was built using [GitHub Pages](https://pages.github.com/).
+
+.. [Contribution guidelines for this project](docs/CONTRIBUTING.md)
+
+
 *******************
 Python FilmAffinity
 *******************
 This is a simple python scraping for the FilmAffinity.
-
-This site was built using [GitHub Pages](https://pages.github.com/).
 
 .. image:: https://github.com/sergiormb/python_filmaffinity/workflows/Tests/badge.svg?branch=master
     :target: https://github.com/sergiormb/python_filmaffinity/actions/workflows/python-test.yml?query=branch%3Amaster
