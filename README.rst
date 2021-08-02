@@ -71,11 +71,10 @@ language
 ********
 
 Classic
---------
 
-- Spanish: 'es'
-- USA, UK: 'en'
-- México: 'mx'
+-- Spanish: 'es'
+-- USA, UK: 'en'
+-- México: 'mx'
 - Argentina: 'ar'
 - Chile: 'cl'
 - Colombia: 'co'
