@@ -70,6 +70,7 @@ Usage
 language
 ********
 
+Classic
 - Spanish: 'es'
 - USA, UK: 'en'
 - México: 'mx'
@@ -77,6 +78,7 @@ language
 - Chile: 'cl'
 - Colombia: 'co'
 
+Alternative
 
 - Example
 
