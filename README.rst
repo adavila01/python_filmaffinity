@@ -2,7 +2,7 @@
 Python FilmAffinity
 *******************
 This is a simple python scraping for the FilmAffinity.
-.. texto:hasdf:
+.. texto:hasdf::
     :target:  https://pypi.python.org/pypi/python_filmaffinity/
 
 .. image:: https://github.com/sergiormb/python_filmaffinity/workflows/Tests/badge.svg?branch=master
