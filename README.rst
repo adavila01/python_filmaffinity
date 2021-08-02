@@ -72,7 +72,8 @@ language
 
 Classic
 
-- - Spanish: 'es'
+- uno
+    - Spanish: 'es'
 - - USA, UK: 'en'
 -- México: 'mx'
 - Argentina: 'ar'
