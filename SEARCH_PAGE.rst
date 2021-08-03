@@ -103,6 +103,7 @@ The alternate mode is activated when the "text_find" argument is used, in which 
 **Example**
 
 .. code-block:: python
+
   import Python_Filmaffinity as pf
   sv = pf.FilmAffinity(lang='filmaffinity')
   sv.lang
