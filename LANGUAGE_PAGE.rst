@@ -48,7 +48,6 @@ Example
 .. code-block:: python
 
   #Alternative mode
-  mvs = sv.search(text_find='pesadilla en elm street', from_year='2010', to_year='2010')                                  
   sv = pf.FilmAffinity(lang='filmaffinity')
   sv.lang                                                                                                                 
   'ec' #my country
