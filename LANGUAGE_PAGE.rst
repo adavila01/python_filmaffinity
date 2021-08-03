@@ -31,7 +31,7 @@ But the new option allows filmaffinity to choose the language, according to the 
   
   import python_filmaffinity as pf
   sv = pf.FilmAffinity(lang='filmaffinity')
-  s.lang
+  sv.lang
   'ec' #my country
 
 Additionally, there are 2 properties that will help you to search more finely, and they are:
