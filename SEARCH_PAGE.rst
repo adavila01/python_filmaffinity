@@ -30,6 +30,7 @@ Exanple
 -------
 
 .. code-block:: python
+.. code-block:: python
   
   import Python_Filmaffinity as pf
   sv = pf.FilmAffinity() 
