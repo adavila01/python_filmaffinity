@@ -186,11 +186,11 @@ search
 
 .. code-block:: python
     
-    movies = service.search(text_find='aladdin') # get 10 results (similar to the classical method)
-    movies = service.search(text_find='aladdin',search_in='title', top=20) # get 20 results
-    movies = service.search(text_find='aladdin, will smith', search_in='title,cast') # get 1 result 
-    movies = service.search(text_find='aladdin', from_year='2019', to_year='2019') #get 4 results
-    movies = sv.search(text_find="aladdin",from_year='2019',to_year='2019',genre='AV') #get 2 results ('AV'= Aventure genre)
+    mvs = sv.search(text_find='aladdin') # get 10 results (similar to the classical method)
+    mvs = sv.search(text_find='aladdin',search_in='title', top=20) # get 20 results
+    mvs = sv.search(text_find='aladdin, will smith', search_in='title,cast') # get 1 result 
+    mvs = sv.search(text_find='aladdin', from_year='2019', to_year='2019') #get 4 results
+    mvs = sv.search(text_find="aladdin",from_year='2019',to_year='2019',genre='AV') #get 2 results ('AV'= Aventure genre)
     
 
 Further explanation in `Search page`_
