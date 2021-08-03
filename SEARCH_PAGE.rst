@@ -48,15 +48,14 @@ Exanple
   'Pesadilla en Elm Street 3: Los guerreros del sueño  '
   'Pesadilla en Elm Street 4: El amo del sueño  '
 
-El modo clásico, considera una busqueda simple, si usted hace una busqueda con uno y solo uno de los siguientes argumentos ('title', 'director', 'cast'), por lo que no importa si intenta aplicar un filtro, la busqueda será siempre la misma.
+The classic mode, considers a simple search, if you do a search with one and only one of the following arguments ('title', 'director', 'cast'), so it does not matter if you try to apply a filter, the search it will always be the same.
 
-Una solución, es anteponer otro argumento, para obligar a la busqueda avanzada, y despues aplicar el filtro.
-
-**NOTA**
-En el modo classico, solo se considerara el último de los tres argumentos de busqueda('title', 'director', 'cast')
+One solution is to prepend another argument, to force the advanced search, and then apply the filter.
+**NOTE**
+In classic mode, only the last of the three search arguments will be considered ('title', 'director', 'cast')
  
 
-.. block-code:: python
+.. code-block:: python
 
   mvs = sv.search(cast='',title='pesadilla en elm street',from_year='1990')
   for m in mvs: m['title']
