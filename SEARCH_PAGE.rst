@@ -98,10 +98,21 @@ Alternative mode
 |           |          |        | to a maximum of 40                |
 +-----------+----------+--------+-----------------------------------+
 
-El modo alternativo, se activa cuando se usa el argumento "text_find", en cuyo caso, se omitirár los argumentos del modo clásico ('title', 'director', 'cast') aún si los envia como parametro, sin embargo; si solo usa "text_find" , sin usar el argumento "search_in", o sin alguno de los filtros ('country','genre','from_year','to_year'), la busqueda, se hará en modo simple.
+The alternate mode is activated when the "text_find" argument is used, in which case the classic mode arguments ('title', 'director', 'cast') will be skipped even if you send them as a parameter, however; if you only use "text_find", without using the "search_in" argument, or without any of the filters ('country', 'genre', 'from_year', 'to_year'), the search will be done in simple mode.
 
-**Ejemplo**
+**Example**
 
 .. code-block:: python
+  import Python_Filmaffinity as pf
+  sv = pf.FilmAffinity(lang='filmaffinity')
+  sv.lang
+  'ec'
+  mvs = sv.search(text_find='pesadilla en elm street')
+  for m in mvs: m['title']
+  'Pesadilla en la calle del infierno  '
+  'Pesadilla en la calle Elm  '
+  'Pesadilla en la calle del infierno 2 - La venganza de Freddy  '
+  'Pesadilla en la calle del infierno 3 - Los guerreros del sueño  '
+  'Pesadilla en la calle del infierno 4 - El amo de los sueños  '
 
 
