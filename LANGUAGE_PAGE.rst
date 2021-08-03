@@ -52,7 +52,7 @@ Example
   mvs = sv.search(text_find='pesadilla en elm street', from_year='2010', to_year='2010')                                  
   sv = pf.FilmAffinity(lang='filmaffinity')
   sv.lang                                                                                                                 
-  'ec' my country
+  'ec' #my country
   mvs = sv.search(text_find='pesadilla en elm street', from_year='2010', to_year='2010')                                  
   for mv in mvs: mv['title']                                                                                              
   'Pesadilla en la calle Elm  (2010) '
