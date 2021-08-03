@@ -1,4 +1,3 @@
-
 *******************
 Python FilmAffinity
 *******************
@@ -12,6 +11,8 @@ This is a simple python scraping for the FilmAffinity.
     :target: https://pypi.python.org/pypi/python_filmaffinity/
 .. image:: https://readthedocs.org/projects/python-filmaffinity/badge/?version=latest
     :target: http://python-filmaffinity.readthedocs.io/en/latest/?badge=latest
+
+
 
 
 Installation
