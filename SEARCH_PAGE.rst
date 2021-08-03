@@ -29,7 +29,7 @@ Classic mode
 Exanple
 -------
 
-.. block-code:: python
+.. code-block:: python
   
   import Python_Filmaffinity as pf
   sv = pf.FilmAffinity() 
@@ -47,7 +47,13 @@ Exanple
   'Pesadilla en Elm Street 2: La venganza de Freddy  '
   'Pesadilla en Elm Street 3: Los guerreros del sueño  '
   'Pesadilla en Elm Street 4: El amo del sueño  '
- 
+
+El modo clásico, considera una busqueda simple, si usted hace una busqueda con uno y solo uno de los siguientes argumentos ('title', 'director', 'cast'), por lo que no importa si intenta aplicar un filtro, la busqueda será siempre la misma.
+
+Una solución, es anteponer otro argumento, para obligar a la busqueda avanzada, y despues aplicar el filtro.
+
+**NOTA**
+En el modo classico, solo se considerara el último de los tres argumentos de busqueda('title', 'director', 'cast')
  
 
 .. block-code:: python
