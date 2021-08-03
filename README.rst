@@ -1,6 +1,33 @@
 *******************
 Python FilmAffinity
 *******************
+
+
+This is a paragraph that contains `a link`_.
+
+.. _a link: https://domain.invalid/
+otro link para el parrafo `b cosa`_
+
+.. _b cosa: https://www.cosa.com
+
+
+Lorem ipsum [#f1]_ dolor sit amet ... [#f2]_
+
+.. rubric:: Footnotes
+
+.. [#f1] Text of the first footnote.
+.. [#f2] Text of the second footnote.
+
+
+
+
+
+
+
+
+
+
+
 This is a simple python scraping for the FilmAffinity.
 
 .. image:: https://github.com/sergiormb/python_filmaffinity/workflows/Tests/badge.svg?branch=master
@@ -93,10 +120,13 @@ Example
     service = python_filmaffinity.FilmAffinity(lang='filmaffinity')
     print(service.lang)
     'ec' # my country my language
-hola:target:
+Further explanation in `Language page`_
 
-search
-******
+.. _Language page: https://github.com/adavila01/python_filmaffinity/blob/rama_pf01/LANGUAGE_PAGE.rst
+
+search 
+****** 
+(Classic mode)
 
 +-----------+----------+--------+-----------------------------------+
 | Parameter | Required |   Type | Description                       |
@@ -117,6 +147,35 @@ search
 .. code-block:: python
 
     movies = service.search(cast='Nicolas Cage')
+
+
+(Alternative mode)
+
++-----------+----------+--------+-----------------------------------+
+| Parameter | Required |   Type | Description                       |
++===========+==========+========+===================================+
+| text_find |   False  | String | searches in simple or advanced    |
+|           |          |        | mode, concepts separated by commas|
++-----------+----------+--------+-----------------------------------+
+| search_in |   False  | String | Look for concepts (described in   | 
+|           |          |        | text_find) in the following       |
+|           |          |        | categories:                       |
+|           |          |        | - title                           |
+|           |          |        | - director                        |
+|           |          |        | - cast                            |
+|           |          |        | - script                          |
+|           |          |        | - photo                           |
+|           |          |        | - music                           |
+|           |          |        | - producer                        |
++-----------+----------+--------+-----------------------------------+
+| director  |   False  | String | Search movies by the director     |
++-----------+----------+--------+-----------------------------------+
+| from_year |   False  | String | Search start date                 |
++-----------+----------+--------+-----------------------------------+
+| to_year   |   False  | String | Search end date                   |
++-----------+----------+--------+-----------------------------------+
+
+
 
 
 get_movie
