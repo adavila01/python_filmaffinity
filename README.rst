@@ -122,7 +122,7 @@ Example
     'ec' # my country my language
 Further explanation in `Language page`_
 
-.. _Language page: https://github.com/adavila01/python_filmaffinity/blob/rama_pf01/LANGUAGE_PAGE.rst
+.. _Language page: LANGUAGE_PAGE.rst
 
 search 
 ****** 
@@ -186,11 +186,17 @@ search
 
 .. code-block:: python
     
-    movies = service.search(cast='Nicolas Cage')
+    movies = service.search(text_find='aladdin') # get 10 results (similar to the classical method)
+    movies = service.search(text_find='aladdin',search_in='title', top=20) # get 20 results
+    movies = service.search(text_find='aladdin, will smith', search_in='title,cast') # get 1 result 
+    movies = service.search(text_find='aladdin', from_year='2019', to_year='2019') #get 4 results
+    movies = service.search(text_find='aladdin', from_year='2019', to_year='2019', genre='') #get 2 results
+    movies = sv.search(text_find="aladdin",from_year='2019',to_year='2019',genre='AV') #get 2 results ('AV'= Aventure genre)
+    
 
 Further explanation in `Search page`_
 
-.. _Language page: SEARCH_PAGE.rst
+.. _Search page: SEARCH_PAGE.rst
 
 
 get_movie
