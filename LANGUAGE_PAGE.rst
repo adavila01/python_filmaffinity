@@ -24,8 +24,7 @@ You can manually configure the language as follows:
   sv = pf.FilmAffinity(lang='es')
   sv.lang
   'es'
-  mvs = sv.search(title="Aladdin, will smith", search_in='title,cast')
-
+  
 But the new option allows filmaffinity to choose the language, according to the country of origin from which the query is made, which in turn makes the search more relevant, it is used:
 
 .. code-block:: python
