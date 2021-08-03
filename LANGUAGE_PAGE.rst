@@ -2,8 +2,8 @@
 Explication:
 ============
 
-In Filmaffinity, el idioma y el pais, están vinculado con las busquedas, por lo que; no es lo mismo buscar "Los miserables" en USA que en Inglaterra, puesto que existe programación local.
-Filmaffinity detecta el pais de origen, y adapta la información a esa realidad.
+In Filmaffinity, the language and the country, are linked to the searches, so; It is not the same to search for "Les Misérables" in the USA as in England, since there is local programming.
+Filmaffinity detects the country of origin, and adapts the information to that reality. 
 
 language
 ********
