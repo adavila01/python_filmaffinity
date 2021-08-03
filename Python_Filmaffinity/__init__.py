@@ -90,20 +90,17 @@ class FilmAffinity(Client):
                         continue
                     elif key == SEARCH_IN:
                         for kin in value.split(','):
-                            if kin in FIELDS_SEARCH_IN:
-                                options +=  'stype[]=%s&' % (kin)
+                            if kin.strip() in FIELDS_SEARCH_IN:
+                                options +=  'stype[]=%s&' % (kin.strip())
                     elif key in FIELDS_SEARCH_BY:
                         nkey = 'fromyear' if key == 'from_year' else 'toyear' if key == 'to_year' else key
                         options += '%s=%s&' % (nkey,str(kwargs[key]))
             if (simple_search):
                 options = 'stext=%s&' % (str(kwargs[TEXT_FIND if TEXT_FIND in kwargs else 'title']))
-                # options = 'stype=title&stext=' + str(kwargs['title']) if simple_search else options
                 url = self.url + 'search.php?' + options
             else:
                 url = self.url + 'advsearch.php?' + options
-            # pdb.set_trace()
             page = self._load_url(url)
-            # pdb.set_trace()
             movies = self._return_list_movies(page, 'search', top)
             if (len(movies) == 0):
                 url = self.url + 'advsearch.php?' + options
