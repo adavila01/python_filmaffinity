@@ -8,7 +8,7 @@ Filmaffinity detects the country of origin, and adapts the information to that r
 language
 ********
 
-- Spanish: 'es'
+- Spanish: 'es' (default)
 - USA, UK: 'en'
 - México: 'mx'
 - Argentina: 'ar'
