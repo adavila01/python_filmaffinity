@@ -160,22 +160,37 @@ search
 | search_in |   False  | String | Look for concepts (described in   | 
 |           |          |        | text_find) in the following       |
 |           |          |        | categories:                       |
-|           |          |        | - title                           |
-|           |          |        | - director                        |
-|           |          |        | - cast                            |
-|           |          |        | - script                          |
-|           |          |        | - photo                           |
-|           |          |        | - music                           |
-|           |          |        | - producer                        |
+|           |          |        |                                   |
+|           |          |        | * title                           |
+|           |          |        | * director                        |
+|           |          |        | * cast                            |
+|           |          |        | * script                          |
+|           |          |        | * photo                           |
+|           |          |        | * music                           |
+|           |          |        | * producer                        |
 +-----------+----------+--------+-----------------------------------+
-| director  |   False  | String | Search movies by the director     |
+| country   |   False  | String |                                   |
++-----------+----------+--------+                                   |
+| genre     |   False  | String |                                   |
++-----------+----------+--------+  Filter the results found         |
+| from_year |   False  | String |                                   |
++-----------+----------+--------+                                   |
+| to_year   |   False  | String |                                   |
 +-----------+----------+--------+-----------------------------------+
-| from_year |   False  | String | Search start date                 |
-+-----------+----------+--------+-----------------------------------+
-| to_year   |   False  | String | Search end date                   |
+| top       |   False  | String | From the results found, only the  |
+|           |          |        | 'top' first results are taken, up |
+|           |          |        | to a maximum of 40                |
 +-----------+----------+--------+-----------------------------------+
 
+- Example
 
+.. code-block:: python
+    
+    movies = service.search(cast='Nicolas Cage')
+
+Further explanation in `Search page`_
+
+.. _Language page: SEARCH_PAGE.rst
 
 
 get_movie
