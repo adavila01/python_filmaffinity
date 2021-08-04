@@ -130,3 +130,26 @@ But, if you use any argument of find_search or the filters ('country', 'genre', 
   'Pesadilla en la calle del infierno 6 - La muerte de Freddy  (1991) '
 
 
+** Understanding search in alternate mode. **
+
+In alternate mode, it is based on the following concept. text_find = "what should I look for", search_in = "the categories where I should search", ('country', 'genre', 'from_year', 'to_year') filters that I should apply.
+
+**Example**
+
+.. code-block:: python
+
+  import Python_Filmaffinity as pf
+  sv = pf.FilmAffinity(lang='filmaffinity')
+  sv.lang
+  'ec' # my country
+  #Example 1
+  mvs = sv.search(text_find='pesadilla en elm street, johnny depp',search_in='title,cast')
+  for m in mvs: m['title']
+  'Pesadilla en la calle del infierno 6 - La muerte de Freddy  (1991) '
+  'Pesadilla en la calle del infierno  (1984) '
+  # Example 2
+  mvs = sv.search(text_find='pesadilla en elm street, johnny depp',search_in='title,cast',from_year='1990')
+  for m in mvs: m['title']
+  'Pesadilla en la calle del infierno 6 - La muerte de Freddy  (1991) '
+
+
