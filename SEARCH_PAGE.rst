@@ -151,5 +151,9 @@ In alternate mode, it is based on the following concept. text_find = "what shoul
   mvs = sv.search(text_find='pesadilla en elm street, johnny depp',search_in='title,cast',from_year='1990')
   for m in mvs: m['title']
   'Pesadilla en la calle del infierno 6 - La muerte de Freddy  (1991) '
+  
+In "#Example 2" can be read as follows:
+
+Search for "pesadilla en elm street" ** and / or ** "Johnny Depp" in the categories "title" ** and ** cast since 1990
 
 
