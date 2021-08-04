@@ -26,7 +26,7 @@ Classic mode
 | to_year   |   False  | String | Search end date                   |
 +-----------+----------+--------+-----------------------------------+
 
-Exanple
+Example
 -------
 
 .. code-block:: python
