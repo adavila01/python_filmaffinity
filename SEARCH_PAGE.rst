@@ -130,7 +130,7 @@ But, if you use any argument of find_search or the filters ('country', 'genre', 
   'Pesadilla en la calle del infierno 6 - La muerte de Freddy  (1991) '
 
 
-** Understanding search in alternate mode. **
+**Understanding search in alternate mode.**
 
 In alternate mode, it is based on the following concept. text_find = "what should I look for", search_in = "the categories where I should search", ('country', 'genre', 'from_year', 'to_year') filters that I should apply.
 
@@ -154,6 +154,6 @@ In alternate mode, it is based on the following concept. text_find = "what shoul
   
 In "#Example 2" can be read as follows:
 
-Search for "pesadilla en elm street" ** and / or ** "Johnny Depp" in the categories "title" ** and ** cast since 1990
+Search for "pesadilla en elm street" **and/or** "Johnny Depp" in the categories "title" **and** cast since 1990
 
 
