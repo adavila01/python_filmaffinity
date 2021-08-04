@@ -107,7 +107,7 @@ The alternate mode is activated when the "text_find" argument is used, in which 
   import Python_Filmaffinity as pf
   sv = pf.FilmAffinity(lang='filmaffinity')
   sv.lang
-  'ec'
+  'ec' # my country
   mvs = sv.search(text_find='pesadilla en elm street')
   for m in mvs: m['title']
   'Pesadilla en la calle del infierno  '
@@ -115,5 +115,18 @@ The alternate mode is activated when the "text_find" argument is used, in which 
   'Pesadilla en la calle del infierno 2 - La venganza de Freddy  '
   'Pesadilla en la calle del infierno 3 - Los guerreros del sueño  '
   'Pesadilla en la calle del infierno 4 - El amo de los sueños  '
+
+But, if you use any argument of find_search or the filters ('country', 'genre', 'from_year', 'to_year'), then it forces an advanced search.
+
+**Example**
+
+
+.. code-block:: python
+  
+  # considering the previous example
+  mvs = sv.search(text_find='pesadilla en elm street',from_year='1990')
+  for m in mvs: m['title']
+  'Pesadilla en la calle Elm  (2010) '
+  'Pesadilla en la calle del infierno 6 - La muerte de Freddy  (1991) '
 
 
